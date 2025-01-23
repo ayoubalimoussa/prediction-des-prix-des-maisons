@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css2.css') }}">
+    <meta charset="UTF-8">
+    <title>Prédiction du prix de la maison</title>
+</head>
+<body>
+    <h2>Prédiction du prix de la maison</h2>
+    <form action="/predict" method="POST">
+        <table>
+            <tr>
+                <td><label for="bedrooms">Nombre de chambres :</label></td>
+                <td><label for="bathrooms">Nombre de salles de bains :</label></td>
+                <td><label for="sqft_living">Surface habitable (sqft) :</label></td>
+            </tr>
+            <tr>
+                <td><input type="number" id="bedrooms" name="bedrooms" required></td>
+                <td><input type="number" id="bathrooms" name="bathrooms" required></td>
+                <td><input type="number" id="sqft_living" name="sqft_living" required></td>
+            </tr>
+            <tr>
+                <td><label for="sqft_lot">Surface du terrain (sqft) :</label></td>
+                <td><label for="floors">Nombre d'étages :</label></td>
+                <td><label for="waterfront">Présence d'une vue sur l'eau :</label></td>
+            </tr>
+            <tr>
+                <td><input type="number" id="sqft_lot" name="sqft_lot" required></td>
+                <td><input type="number" id="floors" name="floors" required></td>
+                <td><input type="number" id="waterfront" name="waterfront" required></td>
+            </tr>
+            <tr>
+                <td><label for="view">Vue :</label></td>
+                <td><label for="grade">Qualité de la construction :</label></td>
+                <td><label for="sqft_above">Surface au-dessus du sous-sol (sqft) :</label></td>
+            </tr>
+            <tr>
+                <td><input type="number" id="view" name="view" required></td>
+                <td><input type="number" id="grade" name="grade" required></td>
+                <td><input type="number" id="sqft_above" name="sqft_above" value="0"></td>
+            </tr>
+            <tr>
+                <td><label for="sqft_basement">Surface du sous-sol (sqft) :</label></td>
+                <td><label for="yr_built">Année de construction :</label></td>
+                <td><label for="yr_renovated">Année de rénovation :</label></td>
+            </tr>
+            <tr>
+                <td><input type="number" id="sqft_basement" name="sqft_basement" value="0"></td>
+                <td><input type="number" id="yr_built" name="yr_built" required></td>
+                <td><input type="number" id="yr_renovated" name="yr_renovated" required></td>
+            </tr>
+            <tr>
+                <td><label for="sqft_living15">Surface habitable 15 ans (sqft) :</label></td>
+                <td><label for="sqft_lot15">Surface du terrain 15 ans (sqft) :</label></td>
+            </tr>
+            <tr>
+                <td><input type="number" id="sqft_living15" name="sqft_living15" required></td>
+                <td><input type="number" id="sqft_lot15" name="sqft_lot15" required></td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: center;">
+                    <input type="submit" value="Prédire">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <div class="result">
+        <h3>Résultat de la prédiction :</h3>
+        {% if prediction_text %}
+            <h3>Le prix prédit de la maison est : {{ prediction_text }} €</h3>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+/* Styles généraux de la page */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+/* Titre de la page */
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Formulaire */
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1100px; /* Augmenter la largeur maximale du formulaire */
+    margin: 0 auto;
+}
+
+/* Table pour afficher les champs du formulaire */
+table {
+    width: 100%;
+    border-collapse: separate;  /* Utilise des bordures séparées pour espacer */
+    border-spacing: 10px 5px;  /* Augmenter l'espacement horizontal (10px) et vertical (5px) */
+}
+
+table td {
+    padding: 10px;
+    vertical-align: top;
+    width: 33%;  /* Chaque cellule prend un tiers de la largeur */
+}
+
+/* Champs de saisie */
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+/* Bouton de soumission */
+/*input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+/* Bouton de soumission centré */
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 50%; /* Ajustez selon vos besoins */
+    margin: 20px auto; /* Centre horizontalement le bouton */
+    display: block; /* Nécessaire pour appliquer la marge automatique */
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+
+}
+
+/* Résultat de la prédiction */
+.result {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.result h3 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.result p {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+/* Flexbox pour un affichage centré */
+.formbold-main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.formbold-form-wrapper {
+    width: 100%;
+    max-width: 1100px; /* Ajusté pour élargir la taille du formulaire */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries pour rendre le formulaire responsive */
+@media screen and (max-width: 768px) {
+    table td {
+        width: 100%;
+    }
+    
+    table td input {
+        width: 100%;
+    }
+}
